@@ -1,0 +1,22 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add your  Job list item</p>
+  </div>
+  <div class="col">
+    <p>Your  Job Collection list ({{itemCounter}})</p>
+  </div>
+</div>
+<div class="container color-light" [@jobs]="jobs.length">
+  <div class="col">
+    <p class="sm">Use the form below to track your career Position. What Jobs have you participated?</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="Format: Year - Position - Company" [(ngModel)]="professionTxt" required="required">
+        <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <p class="cv-container" *ngFor="let job of jobs; let i=index"  (click)="removeItem(i)" >
+     {{job}}
+    </p>
+  </div>
+</div>

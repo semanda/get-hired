@@ -1,0 +1,13 @@
+<p>
+This is our About Us Page.
+<input type="submit" value="Home" (click)="backHomepage()" >
+
+</p>
+<div class="container color-light" >
+    <div class="col">
+        <p class="cv-container" *ngFor="let job of jobs; let i=index"  (click)="removeItem(i)" >
+         {{job}}
+        </p>
+      </div>
+</div>
+
